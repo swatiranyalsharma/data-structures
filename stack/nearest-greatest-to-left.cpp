@@ -1,8 +1,7 @@
-//nearest greated number to the right
+//nearest greated number to the left
 #include <iostream>
 #include <stack>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int main() 
@@ -10,7 +9,7 @@ int main()
     stack<int> myStack;
     vector<int> myVector;
     int a[4] = {1, 4, 3, 2};
-    for(int i=3;i>=0;i--){
+    for(int i=0;i<4;i++){
       if(myStack.empty()){
         myVector.push_back(-1);
       }else if(!myStack.empty() && myStack.top()> a[i]){
@@ -27,7 +26,6 @@ int main()
       }
       myStack.push(a[i]);
     }
-    reverse(myVector.begin(), myVector.end());
     for(const int& i: myVector){
       cout<<i<<" ";
     }
